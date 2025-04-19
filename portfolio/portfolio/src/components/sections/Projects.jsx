@@ -1,7 +1,8 @@
-import { motion } from "framer-motion";
+import React from 'react';
 import { projects } from "../../data/projects";
 import appStoreBadge from "../../assets/app-store-badge.png";
 import playStoreBadge from "../../assets/google-play-badge.png";
+import { motion } from "framer-motion";
 
 const LanguageTag = ({ name, color }) => (
   <span
@@ -98,16 +99,36 @@ const ProjectCard = ({ title, description, image, links, technologies, type, use
   // Convert WEB APP to WEBSITE
   const displayType = type === "WEB APP" ? "WEBSITE" : type;
   
+  // Generate dynamic colors based on image path
+  const getColorFromString = (str, index, saturation, lightness) => {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    // Add the index to get different colors from the same string
+    hash = hash + index * 100;
+    
+    // Convert to HSL - keeps consistent saturation and lightness
+    const h = Math.abs(hash) % 360;
+    return `hsla(${h}, ${saturation}%, ${lightness}%, 0.15)`;
+  };
+  
+  // Generate four colors for the four corners of the gradient
+  const topLeft = getColorFromString(image, 0, 70, 50);
+  const topRight = getColorFromString(image, 1, 70, 50);
+  const bottomRight = getColorFromString(image, 2, 70, 50);
+  const bottomLeft = getColorFromString(image, 3, 70, 50);
+  
   return (
     <motion.div
       whileHover={{ y: -5 }}
       className="rounded-lg overflow-hidden shadow-lg relative"
       style={{
         background: `
-          radial-gradient(circle at 0% 0%, rgba(66, 184, 131, 0.15) 0%, transparent 50%),
-          radial-gradient(circle at 100% 0%, rgba(49, 120, 198, 0.15) 0%, transparent 50%),
-          radial-gradient(circle at 100% 100%, rgba(255, 202, 40, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 0% 100%, rgba(216, 44, 32, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 0% 0%, ${topLeft} 0%, transparent 50%),
+          radial-gradient(circle at 100% 0%, ${topRight} 0%, transparent 50%),
+          radial-gradient(circle at 100% 100%, ${bottomRight} 0%, transparent 50%),
+          radial-gradient(circle at 0% 100%, ${bottomLeft} 0%, transparent 50%),
           linear-gradient(to bottom right, rgba(17, 24, 39, 0.97), rgba(31, 41, 55, 0.97))
         `
       }}
