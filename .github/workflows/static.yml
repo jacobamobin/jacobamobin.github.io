@@ -40,16 +40,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
-          cache-dependency-path: portfolio/portfolio/package-lock.json
       
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       
       - name: Build
         run: npm run build
         env:
-          VITE_BASE_URL: ${{ github.event.repository.name }}
+          BASE_URL: /${{ github.event.repository.name }}/
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
