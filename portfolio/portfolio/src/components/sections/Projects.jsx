@@ -132,7 +132,7 @@ const ProjectCard = ({ title, description, image, links, technologies, type, use
       </div>
       <div className="p-4 relative">
         <div className="flex justify-between items-start mb-2">
-          <div className="flex items-start sm:items-center flex-col sm:flex-row sm:gap-3 max-w-[70%]">
+          <div className="flex items-start sm:items-center flex-col sm:flex-row sm:gap-3 max-w-[100%]">
             <h3 
               className="text-xl font-semibold text-white break-words hyphens-auto group relative"
               title={title}
