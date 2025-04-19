@@ -28,9 +28,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./portfolio/portfolio
 
     steps:
       - name: Checkout
@@ -41,11 +38,18 @@ jobs:
         with:
           node-version: 18
       
+      - name: List directories
+        run: ls -la
+      
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd portfolio/portfolio
+          npm install
       
       - name: Build
-        run: npm run build
+        run: |
+          cd portfolio/portfolio
+          npm run build
         env:
           BASE_URL: /${{ github.event.repository.name }}/
       
@@ -55,7 +59,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./portfolio/portfolio/dist
+          path: portfolio/portfolio/dist
       
       - name: Deploy to GitHub Pages
         id: deployment
