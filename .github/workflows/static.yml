@@ -28,6 +28,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portfolio/portfolio
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,15 +41,15 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: 'portfolio/portfolio/package-lock.json'
+          cache-dependency-path: portfolio/portfolio/package-lock.json
       
       - name: Install dependencies
-        run: npm install
-        working-directory: portfolio/portfolio
+        run: npm ci
       
       - name: Build
         run: npm run build
-        working-directory: portfolio/portfolio
+        env:
+          VITE_BASE_URL: ${{ github.event.repository.name }}
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -53,7 +57,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'portfolio/portfolio/dist'
+          path: portfolio/portfolio/dist
       
       - name: Deploy to GitHub Pages
         id: deployment
