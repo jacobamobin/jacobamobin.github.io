@@ -33,8 +33,8 @@ function App() {
       
       <div className="body w-[90%] sm:w-[85%] md:w-76/100 lg:w-70/100 xl:w-50/100 mx-auto pb-0.5 px-3 sm:px-4">
         <div className="w-full">
-          <h1 className="flex items-center w-auto fade-down font-bold text-2xl sm:text-3xl md:text-4xl">
-            <span>👋</span>
+          <h1 className="flex items-start sm:items-center w-auto fade-down font-bold text-2xl sm:text-3xl md:text-4xl">
+            <span className="mt-1 sm:mt-0">👋</span>
             <span 
               className={`w-auto typing ml-1 ${theme === "dark" ? "dark" : "light"}`}
               style={{ display: "inline" }}

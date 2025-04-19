@@ -52,3 +52,16 @@
     animation-fill-mode: forwards;
   }
 
+  /* Allow text to wrap on mobile */
+  @media (max-width: 640px) {
+    h1, h2, h3, h4, h5, h6 {
+      word-break: break-word;
+      line-height: 1.3;
+    }
+    
+    .section-title {
+      white-space: normal;
+      overflow-wrap: break-word;
+    }
+  }
+

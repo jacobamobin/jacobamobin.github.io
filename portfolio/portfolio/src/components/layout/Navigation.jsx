@@ -97,7 +97,7 @@ const Navigation = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="border-t border-white/10 bg-black/40 backdrop-blur-md"
+          className="border-t border-white/10 bg-black backdrop-blur-md"
         >
           <div className="flex flex-col px-4 py-2">
             <MobileNavLink onClick={() => scrollToSection('skills')}>Skills</MobileNavLink>
