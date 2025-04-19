@@ -33,22 +33,31 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
+      - name: Debug directory structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "\nDirectory contents:"
+          ls -la
+          echo "\nAll contents recursively:"
+          find . -type d
+      
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
       
-      - name: List directories
-        run: ls -la
-      
       - name: Install dependencies
         run: |
-          cd portfolio/portfolio
+          cd portfolio
+          ls -la
+          cd portfolio
           npm install
       
       - name: Build
         run: |
-          cd portfolio/portfolio
+          cd portfolio
+          cd portfolio
           npm run build
         env:
           BASE_URL: /${{ github.event.repository.name }}/
