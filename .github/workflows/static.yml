@@ -32,13 +32,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
-      - name: Setup and build website
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
+      - name: Verify directory structure
         run: |
-          npm install -g yarn
-          yarn global add vite
-          yarn
-          yarn build
+          ls -la
+          ls -la portfolio || echo "No portfolio directory found"
+      
+      - name: Build website
+        run: |
+          cd portfolio/portfolio
+          npm install
+          npm run build
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -46,7 +57,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: portfolio/portfolio/dist
       
       - name: Deploy to GitHub Pages
         id: deployment
