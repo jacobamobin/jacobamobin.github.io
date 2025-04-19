@@ -1,0 +1,50 @@
+  @import "tailwindcss";
+  @plugin "daisyui";
+
+  ul, ol {
+    list-style-position: outside;
+    list-style-type: disc;
+  }
+
+  body {
+    line-height: 1.6;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 7.85em;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color:white;
+    }
+  }
+
+  .typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgb(0, 0, 0);
+    animation: typing 1.5s steps(30) 1 normal both, blink 0.75s step-end infinite;
+  }
+  .dark .typing{
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgb(0, 0, 0);
+    animation: typing 1.5s steps(30) 1 normal both, blink 0.75s step-end infinite;
+  }
+
