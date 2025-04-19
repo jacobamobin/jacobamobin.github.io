@@ -1,4 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
+# Simplified workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
@@ -32,24 +32,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-      
-      - name: Verify directory structure
+
+      - name: Create and setup portfolio directory
         run: |
-          ls -la
-          ls -la portfolio || echo "No portfolio directory found"
-      
-      - name: Build website
-        run: |
-          cd portfolio/portfolio
-          npm install
-          npm run build
+          mkdir -p portfolio
+          cd portfolio
+          echo "<!DOCTYPE html><html><head><meta http-equiv=\"refresh\" content=\"0; url=https://jacobamobin.com\"/></head><body><p>Redirecting to <a href=\"https://jacobamobin.com\">jacobamobin.com</a></p></body></html>" > index.html
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -57,7 +50,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: portfolio/portfolio/dist
+          path: portfolio
       
       - name: Deploy to GitHub Pages
         id: deployment
