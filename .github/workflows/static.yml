@@ -35,12 +35,10 @@ jobs:
       
       - name: Debug directory structure
         run: |
-          echo "Current directory:"
-          pwd
-          echo "\nDirectory contents:"
+          echo "Root directory contents:"
           ls -la
-          echo "\nAll contents recursively:"
-          find . -type d
+          echo "\nPortfolio directory contents:"
+          ls -la portfolio/
       
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -48,17 +46,12 @@ jobs:
           node-version: 18
       
       - name: Install dependencies
-        run: |
-          cd portfolio
-          ls -la
-          cd portfolio
-          npm install
+        working-directory: portfolio/portfolio
+        run: npm install
       
       - name: Build
-        run: |
-          cd portfolio
-          cd portfolio
-          npm run build
+        working-directory: portfolio/portfolio
+        run: npm run build
         env:
           BASE_URL: /${{ github.event.repository.name }}/
       
