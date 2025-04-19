@@ -132,9 +132,9 @@ const ProjectCard = ({ title, description, image, links, technologies, type, use
       </div>
       <div className="p-4 relative">
         <div className="flex justify-between items-start mb-2">
-          <div className="flex items-start sm:items-center flex-col sm:flex-row sm:gap-3 max-w-[100%]">
+          <div className="flex items-start sm:items-center flex-col sm:flex-row sm:gap-3 flex-1 min-w-0 pr-2">
             <h3 
-              className="text-xl font-semibold text-white break-words hyphens-auto group relative"
+              className="text-xl font-semibold text-white break-words hyphens-auto group relative truncate max-w-full"
               title={title}
             >
               {title}
@@ -145,7 +145,9 @@ const ProjectCard = ({ title, description, image, links, technologies, type, use
               </span>
             )}
           </div>
-          <ProjectLinks links={links} />
+          <div className="flex-shrink-0">
+            <ProjectLinks links={links} />
+          </div>
         </div>
         <div className="flex flex-wrap mb-4">
           {technologies.map((tech) => (
