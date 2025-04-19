@@ -33,27 +33,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Debug directory structure
+      - name: Setup and build website
         run: |
-          echo "Root directory contents:"
-          ls -la
-          echo "\nPortfolio directory contents:"
-          ls -la portfolio/
-      
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-      
-      - name: Install dependencies
-        working-directory: portfolio/portfolio
-        run: npm install
-      
-      - name: Build
-        working-directory: portfolio/portfolio
-        run: npm run build
-        env:
-          BASE_URL: /${{ github.event.repository.name }}/
+          npm install -g yarn
+          yarn global add vite
+          yarn
+          yarn build
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -61,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: portfolio/portfolio/dist
+          path: dist
       
       - name: Deploy to GitHub Pages
         id: deployment
