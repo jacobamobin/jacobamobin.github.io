@@ -126,7 +126,7 @@ export const projects = [
 
   // 7 ───────────────────────────────────────────────────────
   {
-    title: "DueBy - Assignment Tracker",
+    title: "Assignment Tracker",
     type:  "iOS • iPadOS • watchOS APP",
     description:
       "A SwiftUI + SwiftData planner that organises homework by due date, syncs to widgets, and notifies you of looming deadlines across all Apple devices.",

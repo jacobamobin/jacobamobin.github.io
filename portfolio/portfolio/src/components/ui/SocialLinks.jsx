@@ -79,7 +79,18 @@ const SocialLinks = () => {
         </a>
       </div>
 
-      <div className="flex items-center gap-1 opacity-70 mr-2">
+      <div className="tooltip tooltip-bottom" data-tip="Resume">
+        <a
+          className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-auto px-2 h-10 flex justify-center items-center hover:opacity-100 duration-200"
+          href={resume}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p className="text-sm sm:text-base">Resume</p>
+        </a>
+      </div>
+
+      <div className="flex items-center gap-1 opacity-70 ml-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -97,17 +108,6 @@ const SocialLinks = () => {
         </svg>
         <span className="text-sm">Toronto</span>
         <span className="ml-1" role="img" aria-label="Canadian Flag">🇨🇦</span>
-      </div>
-
-      <div className="tooltip tooltip-bottom" data-tip="Resume">
-        <a
-          className="opacity-70 rounded-md border-1 border-gray-500 border-opacity-50 w-auto px-2 h-10 flex justify-center items-center hover:opacity-100 duration-200"
-          href={resume}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p className="text-sm sm:text-base">Resume</p>
-        </a>
       </div>
 
       <div className="ml-0 md:ml-auto hidden">

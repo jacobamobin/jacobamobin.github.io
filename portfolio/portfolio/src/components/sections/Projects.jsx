@@ -132,15 +132,15 @@ const ProjectCard = ({ title, description, image, links, technologies, type, use
       </div>
       <div className="p-4 relative">
         <div className="flex justify-between items-start mb-2">
-          <div className="flex items-center gap-3 max-w-[70%]">
+          <div className="flex items-start sm:items-center flex-col sm:flex-row sm:gap-3 max-w-[70%]">
             <h3 
-              className="text-xl font-semibold text-white truncate group relative"
+              className="text-xl font-semibold text-white break-words hyphens-auto group relative"
               title={title}
             >
               {title}
             </h3>
             {userCount && (
-              <span className="text-sm text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded-full whitespace-nowrap flex-shrink-0">
+              <span className="text-sm text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded-full whitespace-nowrap flex-shrink-0 mt-1 sm:mt-0">
                 {userCount}
               </span>
             )}
