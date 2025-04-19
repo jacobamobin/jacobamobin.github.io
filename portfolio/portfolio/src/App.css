@@ -37,14 +37,18 @@
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
+    width: 7.85em;
     border-right: 2px solid rgb(0, 0, 0);
-    animation: typing 1.5s steps(30) 1 normal both, blink 0.75s step-end infinite;
+    animation: typing 1.5s steps(30) 1 normal both, blink 0.75s step-end 8;
+    animation-fill-mode: forwards;
   }
   .dark .typing{
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
+    width: 7.85em;
     border-right: 2px solid rgb(0, 0, 0);
-    animation: typing 1.5s steps(30) 1 normal both, blink 0.75s step-end infinite;
+    animation: typing 1.5s steps(30) 1 normal both, blink 0.75s step-end 8;
+    animation-fill-mode: forwards;
   }
 

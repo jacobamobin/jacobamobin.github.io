@@ -1,6 +1,29 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkScreenSize();
+    
+    // Add event listener
+    window.addEventListener('resize', checkScreenSize);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -12,6 +35,11 @@ const Navigation = () => {
         top: offsetPosition,
         behavior: 'smooth'
       });
+    }
+    
+    // Close menu after clicking a link on mobile
+    if (isMobile) {
+      setIsMenuOpen(false);
     }
   };
 
@@ -38,16 +66,47 @@ const Navigation = () => {
             Jacob Mobin
           </motion.button>
 
-          {/* Right side - Navigation Links */}
-          <div className="flex space-x-8">
-            <NavLink onClick={() => scrollToSection('skills')}>Skills</NavLink>
-            <NavLink onClick={() => scrollToSection('projects')}>Projects</NavLink>
-            <NavLink disabled>Mods</NavLink>
-            <NavLink onClick={() => scrollToSection('hackathons')}>Hackathons</NavLink>
-            <NavLink onClick={() => scrollToSection('contact')}>Contact</NavLink>
-          </div>
+          {/* Hamburger menu button (mobile only) */}
+          {isMobile && (
+            <button 
+              onClick={toggleMenu}
+              className="text-white p-2"
+              aria-label="Toggle navigation menu"
+            >
+              <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all duration-300 ${isMenuOpen ? 'transform rotate-45 translate-y-2' : ''}`}></div>
+              <div className={`w-6 h-0.5 bg-white mb-1.5 transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
+              <div className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'transform -rotate-45' : ''}`}></div>
+            </button>
+          )}
+
+          {/* Desktop Navigation Links */}
+          {!isMobile && (
+            <div className="flex space-x-8">
+              <NavLink onClick={() => scrollToSection('skills')}>Skills</NavLink>
+              <NavLink onClick={() => scrollToSection('projects')}>Projects</NavLink>
+              <NavLink disabled>Mods</NavLink>
+              <NavLink onClick={() => scrollToSection('hackathons')}>Hackathons</NavLink>
+            </div>
+          )}
         </div>
       </div>
+
+      {/* Mobile menu dropdown */}
+      {isMobile && isMenuOpen && (
+        <motion.div 
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          exit={{ opacity: 0, height: 0 }}
+          className="border-t border-white/10 bg-black/40 backdrop-blur-md"
+        >
+          <div className="flex flex-col px-4 py-2">
+            <MobileNavLink onClick={() => scrollToSection('skills')}>Skills</MobileNavLink>
+            <MobileNavLink onClick={() => scrollToSection('projects')}>Projects</MobileNavLink>
+            <MobileNavLink disabled>Mods</MobileNavLink>
+            <MobileNavLink onClick={() => scrollToSection('hackathons')}>Hackathons</MobileNavLink>
+          </div>
+        </motion.div>
+      )}
     </motion.nav>
   );
 };
@@ -59,6 +118,19 @@ const NavLink = ({ children, onClick, disabled }) => (
       disabled ? 'opacity-50 cursor-not-allowed' : 'hover:text-blue-400'
     }`}
     whileHover={disabled ? {} : { scale: 1.05 }}
+    whileTap={disabled ? {} : { scale: 0.95 }}
+    disabled={disabled}
+  >
+    {children}
+  </motion.button>
+);
+
+const MobileNavLink = ({ children, onClick, disabled }) => (
+  <motion.button
+    onClick={onClick}
+    className={`text-gray-300 hover:text-white py-3 border-b border-white/10 transition-colors duration-200 text-base w-full text-left ${
+      disabled ? 'opacity-50 cursor-not-allowed' : 'hover:text-blue-400'
+    }`}
     whileTap={disabled ? {} : { scale: 0.95 }}
     disabled={disabled}
   >

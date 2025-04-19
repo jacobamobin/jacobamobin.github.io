@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import resume from "../../assets/Resume.pdf";
 
-const SocialLinks = ({ theme, handleThemeChange }) => {
+const SocialLinks = () => {
   return (
     <motion.div
       initial={{ y: 10, opacity: 0 }}
@@ -10,7 +10,7 @@ const SocialLinks = ({ theme, handleThemeChange }) => {
         duration: 0.6,
         ease: "easeOut",
       }}
-      className="iconBox flex gap-2 mt-5 items-center"
+      className="iconBox flex flex-wrap gap-2 mt-5 items-center"
     >
       <div className="tooltip tooltip-bottom" data-tip="Github">
         <a
@@ -86,11 +86,11 @@ const SocialLinks = ({ theme, handleThemeChange }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <p>Resume</p>
+          <p className="text-sm sm:text-base">Resume</p>
         </a>
       </div>
 
-      <div className="flex items-center gap-1 opacity-70">
+      <div className="flex items-center gap-1 opacity-70 ml-0 md:ml-auto">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"

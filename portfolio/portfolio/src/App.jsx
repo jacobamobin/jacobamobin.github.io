@@ -31,9 +31,9 @@ function App() {
     >
       <Header theme={theme} />
       
-      <div className="body w-76/100 lg:w-70/100 xl:w-50/100 mx-auto pb-0.5">
-        <div className="w-10%">
-          <h1 className="flex items-center w-auto fade-down font-bold text-3xl md:text-4xl lg:text-4xl xl:text-4xl">
+      <div className="body w-[90%] sm:w-[85%] md:w-76/100 lg:w-70/100 xl:w-50/100 mx-auto pb-0.5 px-3 sm:px-4">
+        <div className="w-full">
+          <h1 className="flex items-center w-auto fade-down font-bold text-2xl sm:text-3xl md:text-4xl">
             <span>👋</span>
             <span 
               className={`w-auto typing ml-1 ${theme === "dark" ? "dark" : "light"}`}
@@ -44,11 +44,11 @@ function App() {
           </h1>
         </div>
         
-        <h2 className={`text-xl font-normal mt-3 ${theme === "dark" ? "text-gray-300" : "text-black"}`}>
+        <h2 className={`text-lg sm:text-xl font-normal mt-3 ${theme === "dark" ? "text-gray-300" : "text-black"}`}>
           Computer Science Student at Toronto Metropolitan University
         </h2>
 
-        <SocialLinks theme={theme} handleThemeChange={handleThemeChange} />
+        <SocialLinks />
         <About />
         <Skills theme={theme} />
         <Projects theme={theme} />
