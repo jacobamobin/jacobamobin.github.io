@@ -9,9 +9,9 @@ const About = () => {
         duration: 0.6,
         ease: "easeOut",
       }}
-      className="mt-8 container mx-auto px-4"
+      className="mt-4 container mx-auto px-4"
     >
-      <div className="glass-card profile-card mb-8">
+      <div className="glass-card profile-card mb-16">
         <div className="space-y-6">
           <div className="mb-6 text-center">
             <h2 className="flex items-center justify-center font-bold text-2xl sm:text-3xl mb-3">

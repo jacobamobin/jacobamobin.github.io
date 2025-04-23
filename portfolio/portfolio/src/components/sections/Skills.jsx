@@ -93,13 +93,13 @@ const Skills = () => {
         duration: 0.6,
         ease: "easeOut",
       }}
-      className=""
+      className="mt-16"
     >
       <h1 className="section-title" id="skills">
         Skills
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
         {Object.entries(skills).map(([category, items], categoryIndex) => (
           <motion.div
             key={category}

@@ -146,13 +146,13 @@ const Hackathons = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className=""
+      className="mt-16 mb-16"
     >
       <h1 className="section-title" id="hackathons">
         Hackathons
       </h1>
       
-      <div className="relative max-w-3xl mx-auto">
+      <div className="relative max-w-3xl mx-auto px-4">
         {/* Timeline line */}
         <div className="absolute left-6 top-6 bottom-6 w-[2px] bg-gradient-to-b from-blue-500/50 to-purple-500/50" />
         

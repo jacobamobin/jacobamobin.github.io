@@ -31,10 +31,10 @@ const SocialLinks = () => {
       variants={container}
       initial="hidden"
       animate="show"
-      className="mt-6 mb-10 text-center"
+      className="mt-4 mb-8 text-center"
     >
       {/* Social buttons container */}
-      <div className="flex justify-center gap-4 mb-6">
+      <div className="flex justify-center gap-4 mb-4">
         {/* GitHub */}
         <motion.a
           variants={item}
@@ -139,7 +139,7 @@ const SocialLinks = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.5 }}
-        className="flex justify-center items-center"
+        className="flex justify-center items-center mb-16"
       >
         <div className="flex items-center gap-2 text-gray-400 text-sm">
           <svg
