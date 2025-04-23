@@ -9,23 +9,30 @@ const About = () => {
         duration: 0.6,
         ease: "easeOut",
       }}
-      className="mt-10"
+      className="mt-8 container mx-auto px-4"
     >
-      <h1 className="font-bold text-2xl">About me</h1>
-      <ul className="list-disc space-y-2 mt-2">
-        <li className="hover:translate-x-1 duration-300">
-          🖥️ 1st year CS student @TMU
-        </li>
-        <li className="hover:translate-x-1 duration-300">
-          🥋 Achieved a Second Degree Black Belt in Taekwondo and earned my Assistant Instructor Coaching Certification.
-        </li>
-        <li className="hover:translate-x-1 duration-300">
-          🎥 Video Editor proficient in DaVinci Resolve and Premiere Pro
-        </li>
-        <li className="hover:translate-x-1 duration-300">
-          🤖 Interested in full-stack applications, large language models, and artificial intelligence.
-        </li>
-      </ul>
+      <div className="glass-card profile-card mb-8">
+        <div className="space-y-6">
+          <div className="mb-6 text-center">
+            <h2 className="flex items-center justify-center font-bold text-2xl sm:text-3xl mb-3">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                👋 Hi, I'm Jacob
+              </span>
+            </h2>
+            <p className="text-lg text-gray-300 font-medium">
+              Computer Science Student at Toronto Metropolitan University
+            </p>
+          </div>
+
+          <p className="text-gray-300 leading-relaxed text-center">
+            I'm passionate about building <strong className="text-purple-400">full-stack applications</strong>, exploring <strong className="text-blue-400">large language models</strong>, and developing <strong className="text-indigo-400">artificial intelligence</strong> solutions.
+          </p>
+          
+          <p className="text-gray-300 leading-relaxed text-center">
+            Beyond coding, I'm a <strong className="text-purple-400">2nd Degree Black Belt</strong> in Taekwondo, create content with <strong className="text-blue-400">DaVinci Resolve</strong> and <strong className="text-indigo-400">Premiere Pro</strong>, and love exploring emerging technologies.
+          </p>
+        </div>
+      </div>
     </motion.div>
   );
 };

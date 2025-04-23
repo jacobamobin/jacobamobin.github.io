@@ -26,90 +26,117 @@ const HackathonCard = ({ title, date, description, location, achievement, links,
         <path d="M140 50h140l-70 120 70 120H140l-70-120 70-120z"/>
         <path d="M0 170V50h140v240H0v-120z"/>
       </svg>
+    ),
+    site: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
     )
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="group relative rounded-xl overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-colors duration-300" />
-      
-      <div className="relative p-6 bg-gradient-to-br from-gray-900/95 to-gray-800/95 backdrop-blur-sm border border-white/10 group-hover:border-white/20 transition-all duration-300">
-        {/* Header */}
-        <div className="flex items-start justify-between mb-4">
-          <div>
-            <div className="flex items-center gap-3 mb-1">
-              <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">
-                {title}
-              </h3>
-              {status === 'upcoming' && (
-                <span className="px-3 py-1 bg-blue-400/10 text-blue-400 rounded-full text-xs font-medium border border-blue-400/20">
-                  Coming Soon
-                </span>
-              )}
-              {achievement && (
-                <span className="px-3 py-1 bg-yellow-400/10 text-yellow-400 rounded-full text-xs font-medium border border-yellow-400/20">
-                  {achievement}
-                </span>
-              )}
-            </div>
-            <p className="text-gray-400 text-sm flex items-center gap-2">
-              <span>{date}</span>
-              <span className="text-gray-600">•</span>
-              <span>{location}</span>
-            </p>
-          </div>
-        </div>
-
-        {/* Technologies */}
-        {technologies && (
-          <div className="flex flex-wrap gap-2 mb-4">
-            {technologies.map((tech) => (
-              <TechnologyTag key={tech.name} {...tech} />
-            ))}
-          </div>
-        )}
-
-        {/* Description */}
-        <p className="text-gray-300 text-sm mb-4 leading-relaxed">{description}</p>
-
-        {/* Links */}
-        {links && (
-          <div className="flex gap-4">
-            {links.github && (
-              <a
-                href={links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-all group/link"
-              >
-                <span className="p-2 rounded-lg bg-white/5 group-hover/link:bg-white/10 transition-colors">
-                  {icons.github}
-                </span>
-                <span className="font-medium">View Code</span>
-              </a>
-            )}
-            {links.devpost && (
-              <a
-                href={links.devpost}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-all group/link"
-              >
-                <span className="p-2 rounded-lg bg-white/5 group-hover/link:bg-white/10 transition-colors">
-                  {icons.devpost}
-                </span>
-                <span className="font-medium">View Project</span>
-              </a>
-            )}
-          </div>
-        )}
+    <div className="relative flex items-center mb-8">
+      {/* Timeline dot */}
+      <div className="absolute left-0 w-12 h-12 rounded-full overflow-hidden border-4 border-[#1e1e1e] z-20 bg-[#1e1e1e]">
+        <img 
+          src={`/hackathon-logos/${title.toLowerCase().replace(/\s+/g, '-')}.png`} 
+          alt={title}
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/48?text=🏆';
+          }}
+        />
       </div>
-    </motion.div>
+
+      {/* Card */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="glass-card group overflow-hidden ml-8 flex-1"
+        whileHover={{ y: -5 }}
+      >
+        <div className="relative p-6">
+          {/* Header */}
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-4 gap-4">
+            <div>
+              <div className="flex flex-wrap items-center gap-3 mb-2">
+                <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 group-hover:from-blue-500 group-hover:to-purple-600 transition-all duration-300">
+                  {title}
+                </h3>
+                {status === 'upcoming' && (
+                  <span className="px-3 py-1 bg-blue-400/10 text-blue-400 rounded-full text-xs font-medium border border-blue-400/20">
+                    Coming Soon
+                  </span>
+                )}
+                {achievement && (
+                  <span className="px-3 py-1 bg-yellow-400/10 text-yellow-400 rounded-full text-xs font-medium border border-yellow-400/20">
+                    {achievement}
+                  </span>
+                )}
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-gray-400 text-sm">
+                <span>{date}</span>
+                <span className="text-gray-600">•</span>
+                <span>{location}</span>
+              </div>
+            </div>
+            {/* Links */}
+            {links && (
+              <div className="flex gap-2">
+                {links.github && (
+                  <a
+                    href={links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all"
+                    title="GitHub Repository"
+                  >
+                    {icons.github}
+                  </a>
+                )}
+                {links.devpost && (
+                  <a
+                    href={links.devpost}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all"
+                    title="Devpost Project"
+                  >
+                    {icons.devpost}
+                  </a>
+                )}
+                {links.site && (
+                  <a
+                    href={links.site}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-all"
+                    title="Live Site"
+                  >
+                    {icons.site}
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* Technologies */}
+          {technologies && (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {technologies.map((tech) => (
+                <TechnologyTag key={tech.name} {...tech} />
+              ))}
+            </div>
+          )}
+
+          {/* Description */}
+          <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
+        </div>
+      </motion.div>
+    </div>
   );
 };
 
@@ -119,12 +146,26 @@ const Hackathons = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="mt-10 pb-10"
+      className=""
     >
-      <h1 className="font-bold text-2xl mb-6" id="hackathons">Hackathons</h1>
-      <div className="grid gap-6">
-        {hackathons.map((hackathon) => (
-          <HackathonCard key={hackathon.title} {...hackathon} />
+      <h1 className="section-title" id="hackathons">
+        Hackathons
+      </h1>
+      
+      <div className="relative max-w-3xl mx-auto">
+        {/* Timeline line */}
+        <div className="absolute left-6 top-6 bottom-6 w-[2px] bg-gradient-to-b from-blue-500/50 to-purple-500/50" />
+        
+        {/* Hackathon cards */}
+        {hackathons.map((hackathon, index) => (
+          <motion.div
+            key={hackathon.title}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+          >
+            <HackathonCard {...hackathon} />
+          </motion.div>
         ))}
       </div>
     </motion.div>

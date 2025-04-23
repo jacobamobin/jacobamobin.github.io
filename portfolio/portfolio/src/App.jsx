@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 
 // Layout Components
@@ -15,46 +14,42 @@ import Contact from "./components/sections/Contact";
 import SocialLinks from "./components/ui/SocialLinks";
 
 function App() {
-  const [theme, setTheme] = useState("dark");
-
-  const handleThemeChange = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
   return (
-    <div
-      className={`border-opacity-50 bg-[rgb(30,30,30)] duration-200 ${
-        theme === "dark"
-          ? "bg-gray-1000 text-white"
-          : "bg-gray-100 text-black"
-      }`}
-    >
-      <Header theme={theme} />
+    <div className="bg-[rgb(18,18,20)]">
+      {/* Header with profile */}
+      <Header />
       
-      <div className="body w-[90%] sm:w-[85%] md:w-76/100 lg:w-70/100 xl:w-50/100 mx-auto pb-0.5 px-3 sm:px-4">
-        <div className="w-full">
-          <h1 className="flex items-start sm:items-center w-auto fade-down font-bold text-2xl sm:text-3xl md:text-4xl">
-            <span className="mt-1 sm:mt-0">👋</span>
-            <span 
-              className={`w-auto typing ml-1 ${theme === "dark" ? "dark" : "light"}`}
-              style={{ display: "inline" }}
-            >
-              Hi, I'm Jacob
-            </span>
-          </h1>
-        </div>
-        
-        <h2 className={`text-lg sm:text-xl font-normal mt-3 ${theme === "dark" ? "text-gray-300" : "text-black"}`}>
-          Computer Science Student at Toronto Metropolitan University
-        </h2>
+      {/* Main content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Hero section */}
+        <section className="max-w-3xl mx-auto pt-16 pb-24">
+          <SocialLinks />
+          <About />
+        </section>
 
-        <SocialLinks />
-        <About />
-        <Skills theme={theme} />
-        <Projects theme={theme} />
-        <Hackathons />
-        <Contact />
-      </div>
+        {/* Content sections with consistent spacing */}
+        <div className="space-y-32">
+          {/* Skills section */}
+          <section>
+            <Skills />
+          </section>
+
+          {/* Projects section */}
+          <section>
+            <Projects />
+          </section>
+
+          {/* Hackathons section */}
+          <section>
+            <Hackathons />
+          </section>
+
+          {/* Contact section */}
+          <section className="pb-32">
+            <Contact />
+          </section>
+        </div>
+      </main>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const Skills = ({ theme }) => {
+const Skills = () => {
   const skills = {
     Languages: [
       { 
@@ -93,36 +93,69 @@ const Skills = ({ theme }) => {
         duration: 0.6,
         ease: "easeOut",
       }}
-      className="mt-10"
+      className=""
     >
-      <h1 className="font-bold text-2xl mb-6" id="skills">Skills</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Object.entries(skills).map(([category, items]) => (
-          <div
+      <h1 className="section-title" id="skills">
+        Skills
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {Object.entries(skills).map(([category, items], categoryIndex) => (
+          <motion.div
             key={category}
-            className={`p-6 rounded-lg ${
-              theme === "dark"
-                ? "bg-[rgb(24,24,24)] border-1 border-gray-600"
-                : "bg-gray-100"
-            }`}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.6,
+              delay: categoryIndex * 0.1,
+              ease: "easeOut",
+            }}
+            className="glass-card relative overflow-hidden group"
           >
-            <h2 className="text-xl font-semibold mb-4">{category}</h2>
-            <div className="space-y-3">
-              {items.map((skill) => (
-                <div
-                  key={skill.name}
-                  className={`flex items-center gap-3 p-2 rounded-md transition-all duration-300 hover:translate-x-1 ${
-                    theme === "dark"
-                      ? "hover:bg-gray-800"
-                      : "hover:bg-gray-200"
-                  }`}
-                >
-                  <i className={`${skill.icon} text-2xl`} style={{ color: skill.color }}></i>
-                  <span className="text-sm">{skill.name}</span>
-                </div>
-              ))}
+            {/* Background gradient overlay */}
+            <div 
+              className="absolute inset-0 bg-[#121212] transition-opacity duration-500"
+            />
+            <div 
+              className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500 bg-gradient-to-br"
+              style={{
+                background: `linear-gradient(45deg, ${items[0]?.color}30, ${items[1]?.color}30)`
+              }}
+            />
+            
+            <div className="relative p-6 z-10">
+              <h2 className="text-xl font-semibold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                {category}
+              </h2>
+              
+              <div className="space-y-3">
+                {items.map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.1,
+                      ease: "easeOut",
+                    }}
+                    className="flex items-center gap-4 p-3 rounded-lg transition-all duration-300 hover:translate-x-2 bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.05] backdrop-blur-sm"
+                  >
+                    <div 
+                      className="w-10 h-10 rounded-lg flex items-center justify-center"
+                      style={{
+                        background: `linear-gradient(135deg, ${skill.color}15, ${skill.color}05)`,
+                        border: `1px solid ${skill.color}20`
+                      }}
+                    >
+                      <i className={`${skill.icon} text-2xl`} style={{ color: skill.color }}></i>
+                    </div>
+                    <span className="font-medium text-gray-200">{skill.name}</span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </motion.div>

@@ -81,7 +81,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation Links */}
           {!isMobile && (
-            <div className="flex space-x-8">
+            <div className="flex items-center space-x-8">
               <NavLink onClick={() => scrollToSection('skills')}>Skills</NavLink>
               <NavLink onClick={() => scrollToSection('projects')}>Projects</NavLink>
               <NavLink disabled>Mods</NavLink>

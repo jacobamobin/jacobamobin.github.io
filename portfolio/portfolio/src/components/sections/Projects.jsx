@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const LanguageTag = ({ name, color }) => (
   <span
-    className="inline-flex items-center px-2 py-1 mr-2 mb-2 rounded text-sm"
+    className="inline-flex items-center px-3 py-1 mr-2 mb-2 rounded-full text-sm font-medium"
     style={{ 
       backgroundColor: `${color}15`,
       color: color,
@@ -41,7 +41,7 @@ const ProjectLinks = ({ links }) => {
             href={links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full bg-black/30 backdrop-blur-sm hover:bg-black/40 transition-all"
+            className="p-2 rounded-full bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all"
             title="GitHub Repository"
           >
             {icons.github}
@@ -52,7 +52,7 @@ const ProjectLinks = ({ links }) => {
             href={links.web}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full bg-black/30 backdrop-blur-sm hover:bg-black/40 transition-all"
+            className="p-2 rounded-full bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all"
             title="Live Website"
           >
             {icons.web}
@@ -95,73 +95,34 @@ const ProjectLinks = ({ links }) => {
   );
 };
 
-const ProjectCard = ({ title, description, image, links, technologies, type, userCount, theme }) => {
-  // Convert WEB APP to WEBSITE
+const ProjectCard = ({ title, description, image, links, technologies, type, userCount }) => {
   const displayType = type === "WEB APP" ? "WEBSITE" : type;
-  
-  // Generate dynamic colors based on image path
-  const getColorFromString = (str, index, saturation, lightness) => {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    // Add the index to get different colors from the same string
-    hash = hash + index * 100;
-    
-    // Convert to HSL - keeps consistent saturation and lightness
-    const h = Math.abs(hash) % 360;
-    return `hsla(${h}, ${saturation}%, ${lightness}%, 0.15)`;
-  };
-  
-  // Generate four colors for the four corners of the gradient
-  const topLeft = getColorFromString(image, 0, 70, 50);
-  const topRight = getColorFromString(image, 1, 70, 50);
-  const bottomRight = getColorFromString(image, 2, 70, 50);
-  const bottomLeft = getColorFromString(image, 3, 70, 50);
   
   return (
     <motion.div
       whileHover={{ y: -5 }}
-      className="rounded-lg overflow-hidden shadow-lg relative"
-      style={{
-        background: `
-          radial-gradient(circle at 0% 0%, ${topLeft} 0%, transparent 50%),
-          radial-gradient(circle at 100% 0%, ${topRight} 0%, transparent 50%),
-          radial-gradient(circle at 100% 100%, ${bottomRight} 0%, transparent 50%),
-          radial-gradient(circle at 0% 100%, ${bottomLeft} 0%, transparent 50%),
-          linear-gradient(to bottom right, rgba(17, 24, 39, 0.97), rgba(31, 41, 55, 0.97))
-        `
-      }}
+      transition={{ duration: 0.2 }}
+      className="glass-card overflow-hidden"
     >
-      <div className="absolute inset-0 opacity-10" 
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'blur(20px)'
-        }}
-      />
       <div className="relative">
-        <img src={image} alt={title} className="w-full h-48 object-cover" />
+        <img src={image} alt={title} className="w-full h-48 object-cover rounded-t-lg" />
         <div className="absolute top-3 left-3">
-          <span className={`px-2 py-1 rounded text-sm ${
-            theme === "dark" ? "bg-[rgb(15,15,15)] text-blue-400" : "bg-blue-100 text-blue-800"
-          }`}>
+          <span className="px-3 py-1 rounded-full text-sm font-medium bg-black/50 backdrop-blur-sm text-blue-400">
             {displayType}
           </span>
         </div>
       </div>
-      <div className="p-4 relative">
-        <div className="flex justify-between items-start mb-2">
+      <div className="p-6">
+        <div className="flex justify-between items-start mb-4">
           <div className="flex items-start sm:items-center flex-col sm:flex-row sm:gap-3 flex-1 min-w-0 pr-2">
             <h3 
-              className="text-xl font-semibold text-white break-words hyphens-auto group relative truncate max-w-full"
+              className="text-xl font-semibold text-white break-words hyphens-auto group relative truncate max-w-full bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
               title={title}
             >
               {title}
             </h3>
             {userCount && (
-              <span className="text-sm text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded-full whitespace-nowrap flex-shrink-0 mt-1 sm:mt-0">
+              <span className="text-sm text-blue-400 bg-blue-400/10 px-3 py-1 rounded-full whitespace-nowrap flex-shrink-0 mt-1 sm:mt-0 font-medium">
                 {userCount}
               </span>
             )}
@@ -175,7 +136,7 @@ const ProjectCard = ({ title, description, image, links, technologies, type, use
             <LanguageTag key={tech.name} {...tech} />
           ))}
         </div>
-        <p className="text-gray-300">
+        <p className="text-gray-300 leading-relaxed">
           {description}
         </p>
       </div>
@@ -183,7 +144,7 @@ const ProjectCard = ({ title, description, image, links, technologies, type, use
   );
 };
 
-const Projects = ({ theme }) => {
+const Projects = () => {
   return (
     <motion.div
       initial={{ y: 20, opacity: 0 }}
@@ -192,12 +153,15 @@ const Projects = ({ theme }) => {
         duration: 0.6,
         ease: "easeOut",
       }}
-      className="mt-10 pb-10"
+      className=""
     >
-      <h1 className="font-bold text-2xl mb-6" id="projects">Projects</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <h1 className="section-title" id="projects">
+        Projects
+      </h1>
+      
+      <div className="projects-grid">
         {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} theme={theme} />
+          <ProjectCard key={project.title} {...project} />
         ))}
       </div>
     </motion.div>
