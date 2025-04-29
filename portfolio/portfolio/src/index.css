@@ -1,8 +1,9 @@
 :root {
-width: 100%;
-height: 100%;
-background-color: rgb(24, 24, 24);
+  width: 100%;
+  height: 100%;
+  background-color: rgb(24, 24, 24);
 }
-.hi{
-background-color: rgb(31, 31, 31);
+
+.hi {
+  background-color: rgb(31, 31, 31);
 }

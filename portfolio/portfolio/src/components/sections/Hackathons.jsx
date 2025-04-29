@@ -14,7 +14,7 @@ const TechnologyTag = ({ name, color }) => (
   </span>
 );
 
-const HackathonCard = ({ title, date, description, location, achievement, links, technologies, status }) => {
+const HackathonCard = ({ title, date, description, location, achievement, links, technologies, status, image }) => {
   const icons = {
     github: (
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -39,13 +39,13 @@ const HackathonCard = ({ title, date, description, location, achievement, links,
   return (
     <div className="relative flex items-center mb-8">
       {/* Timeline dot */}
-      <div className="absolute left-0 w-12 h-12 rounded-full overflow-hidden border-4 border-[#1e1e1e] z-20 bg-[#1e1e1e]">
+      <div className="absolute left-0 w-[55px] h-[55px] rounded-full overflow-hidden border-4 border-[#1e1e1e] z-20 bg-[#1e1e1e]">
         <img 
-          src={`/hackathon-logos/${title.toLowerCase().replace(/\s+/g, '-')}.png`} 
+          src={image}
           alt={title}
           className="w-full h-full object-cover"
           onError={(e) => {
-            e.target.src = 'https://via.placeholder.com/48?text=🏆';
+            e.target.src = 'https://via.placeholder.com/55?text=🏆';
           }}
         />
       </div>

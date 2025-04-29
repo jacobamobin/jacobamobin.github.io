@@ -72,13 +72,16 @@ body {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
   padding: 2rem 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 

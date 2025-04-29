@@ -153,7 +153,7 @@ const Projects = () => {
         duration: 0.6,
         ease: "easeOut",
       }}
-      className="mt-16 pb-16 container mx-auto px-4"
+      className="mt-16 pb-16 w-full px-4"
     >
       <h1 className="section-title" id="projects">
         Projects

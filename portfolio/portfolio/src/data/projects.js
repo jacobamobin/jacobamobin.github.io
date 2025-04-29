@@ -36,7 +36,7 @@ export const projects = [
     title: "Apple Intelligence WatchOS",
     type:  "WATCHOS APP",
     description:
-      "A watchOS‑native assistant that lets you talk to your wrist and hear instant, AI‑generated replies. It leverages OpenAI Whisper for STT, streams up‑to‑date answers from Perplexity, and speaks back via ChatGPT‑TTS. The shimmering SwiftUI glow animation you see is open‑sourced separately in **AppleIntelligenceGlowEffect** (100 ★+).",
+      "A watchOS‑native assistant that lets you talk to your wrist and hear instant, AI‑generated replies. It leverages OpenAI Whisper for STT, streams up‑to‑date answers from Perplexity, and speaks back via ChatGPT‑TTS. The shimmering SwiftUI glow animation you see is open‑sourced separately in AppleIntelligenceGlowEffect (100 ★+).",
     image: watchImage,
     links: {
       github: "https://github.com/jacobamobin/AppleInteligenceWatchOS"
@@ -59,7 +59,6 @@ export const projects = [
     image: rapidResumeImage,
     userCount: "Work In Progress",
     links: {
-      github: "https://github.com/yourusername/rapidresume",
       web:    "https://yourusername.github.io/rapidresume"
     },
     technologies: [
@@ -78,7 +77,7 @@ export const projects = [
       "An iOS + CarPlay app that lets me control a full‑sized traffic light from the driver's seat. Built with Swift and SwiftUI, it connects over Bluetooth LE to an Arduino‑powered controller for real‑time red/amber/green control, dimming modes, and GPS + accelerometer assistance.",
     image: trafficImage,
     links: {
-      github: "https://github.com"
+      github: "https://github.com/jacobamobin/TrafficLightControlSystem_IOS_CARPLAY"
     },
     technologies: [
       { name: "Swift",         color: "#FA7343" },
@@ -94,7 +93,7 @@ export const projects = [
     title: "Ability",
     type:  "iOS APP · ML / 3D PRINTING",
     description:
-      "An accessibility‑focused iOS app that turns natural‑language prompts (and optional images) into 3D‑printable assistive devices via a Python‑Blender pipeline.",
+      "An accessibility‑focused iOS app that turns natural‑language prompts and optional images into 3D‑printable assistive devices via a Python‑Blender pipeline. This project was built during the Gen AI Hackathon 2025.",
     image: abilityImage,
     links: {
       github: "https://github.com/jacobamobin/Ability"
@@ -112,7 +111,7 @@ export const projects = [
     title: "Minecraft Block Viewer 3D GUI",
     type:  "DESKTOP • JAVA",
     description:
-      "A Java‑based tool that loads 100+ Minecraft blocks into a rotatable, sortable 3‑D interface—perfect for learning block properties and recipes.",
+      "A Java‑based tool that loads 100+ Minecraft blocks into a rotatable, sortable 3‑D interface—perfect for learning block properties and recipes. You can filter through hundreds of blocks by property and the UI and mousehandling is all done from scratch to give it a Minecraft like feel.",
     image: minecraftImage,
     links: {
       github: "https://github.com/jacobamobin/MinecraftBlockGUI"

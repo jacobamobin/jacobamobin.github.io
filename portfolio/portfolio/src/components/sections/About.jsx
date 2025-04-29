@@ -25,11 +25,11 @@ const About = () => {
           </div>
 
           <p className="text-gray-300 leading-relaxed text-center">
-            I'm passionate about building <strong className="text-purple-400">full-stack applications</strong>, exploring <strong className="text-blue-400">large language models</strong>, and developing <strong className="text-indigo-400">artificial intelligence</strong> solutions.
+            I'm passionate about building <strong className="text-purple-400">full-stack applications</strong>, exploring <strong className="text-blue-400">machine learning</strong>, and developing <strong className="text-indigo-400">Mobile Apps</strong>.
           </p>
           
           <p className="text-gray-300 leading-relaxed text-center">
-            Beyond coding, I'm a <strong className="text-purple-400">2nd Degree Black Belt</strong> in Taekwondo, create content with <strong className="text-blue-400">DaVinci Resolve</strong> and <strong className="text-indigo-400">Premiere Pro</strong>, and love exploring emerging technologies.
+            Beyond coding, I'm a <strong className="text-purple-400">2nd Degree Black Belt</strong> in Taekwondo, have my  <strong className="text-blue-400">Assistant Instructor certification</strong> (NCCP), and a video editor who uses <strong className="text-blue-400">DaVinci Resolve</strong> and <strong className="text-indigo-400">Premiere Pro</strong>.
           </p>
         </div>
       </div>

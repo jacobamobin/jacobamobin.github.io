@@ -27,6 +27,9 @@ function App() {
         <Skills />
         <Projects />
         <Hackathons />
+      </div>
+
+      <div className="max-w-3xl mx-auto pb-12 px-4 sm:px-6 pt-6">
         <Contact />
       </div>
     </div>
