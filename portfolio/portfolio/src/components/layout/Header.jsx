@@ -16,7 +16,7 @@ const Header = () => {
           />
           
           {/* Profile card that overlaps the banner - centered */}
-          <div className="absolute -bottom-24 left-1/2 transform -translate-x-1/2 w-full max-w-2xl mx-auto px-4 mt-8">
+          <div className="absolute -bottom-24 left-1/2 transform -translate-x-1/2 w-full max-w-2xl mx-auto px-4">
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
