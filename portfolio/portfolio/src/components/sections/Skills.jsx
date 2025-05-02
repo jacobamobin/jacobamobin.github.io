@@ -79,8 +79,8 @@ const Skills = () => {
       },
       { 
         name: "GitHub",
-        icon: "devicon-github-original colored",
-        color: "#181717"
+        icon: "devicon-github-original",
+        color: "#e6edf3"
       },
       { 
         name: "VS Code",
