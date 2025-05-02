@@ -55,17 +55,18 @@ export const projects = [
     title: "RapidResume",
     type:  "WEB APPLICATION",
     description:
-      "A web application that allows users to upload and manage their resumes efficiently. It supports PDF uploads, previews, and provides a seamless user experience for job seekers.",
+      "Chrome‑extension & web platform where job‑seekers upload a resume and—with one click—receive LLM‑generated rewrites tailored to any job ad, delivered as LaTeX‑styled PDFs. Runs on a Node.js / Firebase backend with Firestore data models, Stripe‑powered credit billing, and Google OAuth + JWT for secure access.",
     image: rapidResumeImage,
     userCount: "Work In Progress",
     links: {
-      web:    "https://yourusername.github.io/rapidresume"
+      web: "https://yourusername.github.io/rapidresume"
     },
     technologies: [
-      { name: "ReactJS",    color: "#61DAFB" },
-      { name: "Node.js",    color: "#339933" },
-      { name: "Express",    color: "#000000" },
-      { name: "MongoDB",    color: "#47A248" }
+      { name: "ReactJS",       color: "#61DAFB" },
+      { name: "Node.js",       color: "#339933" },
+      { name: "Firebase",      color: "#FFCA28" },
+      { name: "TailwindCSS",   color: "#38B2AC" },
+      { name: "Stripe",        color: "#635BFF" }
     ]
   },
 
@@ -74,7 +75,7 @@ export const projects = [
     title: "Traffic Light Control Software",
     type:  "iOS + CARPLAY APP",
     description:
-      "An iOS + CarPlay app that lets me control a full‑sized traffic light from the driver's seat. Built with Swift and SwiftUI, it connects over Bluetooth LE to an Arduino‑powered controller for real‑time red/amber/green control, dimming modes, and GPS + accelerometer assistance.",
+      "An iOS + CarPlay app that lets me control my full‑sized traffic light from the driver's seat. Built with Swift and SwiftUI, it connects over Bluetooth LE to an Arduino‑powered controller for real‑time red/amber/green control, dimming modes, and GPS + accelerometer assistance.",
     image: trafficImage,
     links: {
       github: "https://github.com/jacobamobin/TrafficLightControlSystem_IOS_CARPLAY"
