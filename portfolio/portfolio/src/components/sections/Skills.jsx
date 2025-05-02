@@ -59,6 +59,16 @@ const Skills = () => {
         name: "SwiftData",
         icon: "devicon-swift-plain colored",
         color: "#F05138"
+      },
+      { 
+        name: "Node.js (Express)",
+        icon: "devicon-nodejs-plain colored",
+        color: "#339933"
+      },
+      { 
+        name: "TailwindCSS",
+        icon: "devicon-tailwindcss-plain colored",
+        color: "#38B2AC"
       }
     ],
     "Developer Tools": [
@@ -66,6 +76,11 @@ const Skills = () => {
         name: "Git",
         icon: "devicon-git-plain colored",
         color: "#F05032"
+      },
+      { 
+        name: "GitHub",
+        icon: "devicon-github-original colored",
+        color: "#181717"
       },
       { 
         name: "VS Code",
