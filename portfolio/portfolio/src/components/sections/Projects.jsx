@@ -1,8 +1,6 @@
 import React from 'react';
 import { projects } from "../../data/projects";
-import appStoreBadge from "../../assets/app-store-badge.png";
 import playStoreBadge from "../../assets/google-play-badge.png";
-import { motion } from "framer-motion";
 
 const LanguageTag = ({ name, color }) => (
   <span
@@ -29,6 +27,12 @@ const ProjectLinks = ({ links }) => {
         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
         <polyline points="15 3 21 3 21 9"></polyline>
         <line x1="10" y1="14" x2="21" y2="3"></line>
+      </svg>
+    ),
+    appStore: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 3 L5 17 M12 3 L19 17 M6.5 13 L17.5 13"
+        />
       </svg>
     )
   };
@@ -58,37 +62,32 @@ const ProjectLinks = ({ links }) => {
             {icons.web}
           </a>
         )}
+        {links.appStore && (
+          <a
+            href={links.appStore}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all"
+            title="Download on the App Store"
+          >
+            {icons.appStore}
+          </a>
+        )}
       </div>
-      {(links.appStore || links.playStore) && (
+      {links.playStore && (
         <div className="flex gap-2 mt-1 w-full">
-          {links.appStore && (
-            <a
-              href={links.appStore}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity flex-1"
-            >
-              <img 
-                src={appStoreBadge}
-                alt="Download on the App Store" 
-                className="w-full h-auto"
-              />
-            </a>
-          )}
-          {links.playStore && (
-            <a
-              href={links.playStore}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-80 transition-opacity flex-1"
-            >
-              <img 
-                src={playStoreBadge}
-                alt="Get it on Google Play" 
-                className="w-full h-auto"
-              />
-            </a>
-          )}
+          <a
+            href={links.playStore}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity flex-1"
+          >
+            <img 
+              src={playStoreBadge}
+              alt="Get it on Google Play" 
+              className="w-full h-auto"
+            />
+          </a>
         </div>
       )}
     </div>
@@ -99,11 +98,7 @@ const ProjectCard = ({ title, description, image, links, technologies, type, use
   const displayType = type === "WEB APP" ? "WEBSITE" : type;
   
   return (
-    <motion.div
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.2 }}
-      className="glass-card overflow-hidden"
-    >
+    <div className="glass-card overflow-hidden">
       <div className="relative">
         <img src={image} alt={title} className="w-full h-48 object-cover rounded-t-lg" />
         <div className="absolute top-3 left-3">
@@ -140,21 +135,13 @@ const ProjectCard = ({ title, description, image, links, technologies, type, use
           {description}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const Projects = () => {
   return (
-    <motion.div
-      initial={{ y: 20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{
-        duration: 0.6,
-        ease: "easeOut",
-      }}
-      className="mt-16 pb-16 w-full px-4"
-    >
+    <div className="mt-16 pb-16 w-full px-4">
       <h1 className="section-title" id="projects">
         Projects
       </h1>
@@ -178,7 +165,7 @@ const Projects = () => {
           View More Projects on GitHub
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

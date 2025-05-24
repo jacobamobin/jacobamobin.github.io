@@ -16,7 +16,7 @@ const About = () => {
           <div className="mb-6 text-center">
             <h2 className="flex items-center justify-center font-bold text-2xl sm:text-3xl mb-3">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                👋 Hi, I'm Jacob
+                👋 Hi, I'm Jacob 
               </span>
             </h2>
             <p className="text-lg text-gray-300 font-medium">

@@ -5,6 +5,7 @@ import abilityImage     from "../assets/Ability.jpg";
 import assignmentImage  from "../assets/Assightment.jpg";
 import minecraftImage   from "../assets/MinecraftGUI.jpg";
 import rapidResumeImage from "../assets/Rapid.jpg";
+import ontarioCarMeetsImage from "../assets/OntarioCarMeets.jpg";
 
 export const projects = [
   // 1 ───────────────────────────────────────────────────────
@@ -30,6 +31,29 @@ export const projects = [
       { name: "Firebase",   color: "#FFCA28" }
     ]
   }, */
+
+  {
+    title: "GTA (Ontario) Car Meets",
+    type: "FULL‑STACK APPLICATION",
+    description:
+      "A car enthusiast platform connecting automotive communities across Ontario. Features real-time location tracking, interactive maps for meet discovery, and seamless event organization. The application provides a robust backend infrastructure with secure authentication and scalable cloud deployment.",
+    image: ontarioCarMeetsImage,
+    userCount: "",
+    links: {
+      //web: "https://ontariocarmeets.com",
+      appStore: "https://apps.apple.com/ca/app/gta-carmeets/id6746083732"
+      //github: "https://github.com/jacobmobin/OntarioCarMeets"
+    },
+    technologies: [
+      { name: "SwiftUI", color: "#007AFF" },
+      { name: "SwiftData", color: "#FF2D55" },
+      { name: "Spring Boot", color: "#6DB33F" },
+      { name: "MySQL", color: "#4479A1" },
+      { name: "JWT", color: "#000000" },
+      { name: "Google Cloud", color: "#4285F4" },
+      { name: "Swift", color: "#F05138" }
+    ]
+  },
 
   // 2 ───────────────────────────────────────────────────────
   {
