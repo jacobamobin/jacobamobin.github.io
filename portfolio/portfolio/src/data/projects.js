@@ -79,7 +79,7 @@ export const projects = [
     title: "RapidResume",
     type:  "WEB APPLICATION",
     description:
-      "Chrome‑extension & web platform where job‑seekers upload a resume and—with one click—receive LLM‑generated rewrites tailored to any job ad, delivered as LaTeX‑styled PDFs. Runs on a Node.js / Firebase backend with Firestore data models, Stripe‑powered credit billing, and Google OAuth + JWT for secure access.",
+      "Private project.",
     image: rapidResumeImage,
     userCount: "Work In Progress",
     links: {
