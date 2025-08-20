@@ -29,7 +29,7 @@ export const hackathons = [
       { name: "Data Science", color: "#38B2AC" }
     ],
     links: {
-      github: "hhttps://github.com/XDAathi/DS3-Datathon",
+      github: "https://github.com/XDAathi/DS3-Datathon",
     }
   },
   {
