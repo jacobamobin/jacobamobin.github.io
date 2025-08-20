@@ -1,8 +1,46 @@
 import genaiImg from '../assets/genai.png';
 import ds3Img from '../assets/ds3.png';
 import rsxImg from '../assets/rsx.png';
+import binBuddyImg from '../assets/BinBuddy.jpg';
+import cliniMatchImg from '../assets/CliniMatch.png';
 
 export const hackathons = [
+  {
+    title: "TerraHacks 2025",
+    date: "Aug. 2025",
+    location: "Toronto, ON",
+    description: "Participated in TerraHacks 2025, focusing on technology solutions for healthcare and social impact. Built CliniMatch, an AI-powered platform that connects patients with relevant clinical trials by translating complex medical jargon into simple, understandable language using Google Gemini AI.",
+    image: cliniMatchImg,
+    technologies: [
+      { name: "React", color: "#61DAFB" },
+      { name: "TypeScript", color: "#3178C6" },
+      { name: "Python", color: "#3776AB" },
+      { name: "Google Gemini", color: "#4285F4" },
+      { name: "Supabase", color: "#3ECF8E" }
+    ],
+    links: {
+      github: "https://github.com/jacobamobin/CliniMatch",
+      devpost: "https://devpost.com/software/clinimatch"
+    }
+  },
+    {
+        title: "SolutionHacks",
+        date: "Jun. 2025",
+        location: "Toronto, ON",
+        description: "Participated in SolutionHacks, focusing on building solutions for sustainable development goals. Our team developed Bin Buddy, a smart waste management companion that won the 'Best Projects that Aim to Solve a Sustainable Development Goal' award. The project analyzes and categorizes waste through photo uploads while providing environmental impact insights.",
+        achievement: "1st Place Overall",
+        image: binBuddyImg,
+        technologies: [
+          { name: "React", color: "#61DAFB" },
+          { name: "Python", color: "#3776AB" },
+          { name: "Flask", color: "#000000" },
+          { name: "Supabase", color: "#3ECF8E" }
+        ],
+        links: {
+          github: "https://github.com/XDAathi/Bin-Buddy",
+          devpost: "https://devpost.com/software/bin-buddy-ld8uak"
+        }
+    },
   {
     title: "GenAI Genesis Hackathon",
     date: "Mar. 2025",
@@ -32,6 +70,7 @@ export const hackathons = [
       github: "https://github.com/XDAathi/DS3-Datathon",
     }
   },
+  
   {
     title: "Robotics for Space Exploration",
     date: "Feb. 2024",

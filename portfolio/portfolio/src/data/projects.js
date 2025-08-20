@@ -8,6 +8,7 @@ import rapidResumeImage from "../assets/Rapid.jpg";
 import ontarioCarMeetsImage from "../assets/OntarioCarMeets.jpg";
 import ds3Img from "../assets/ds3.png";
 import binBuddyImg from "../assets/BinBuddy.jpg";
+import cliniMatchImg from "../assets/CliniMatch.png";
 
 export const projects = [
   // 1 ───────────────────────────────────────────────────────
@@ -149,27 +150,43 @@ export const projects = [
 
   // 6 ───────────────────────────────────────────────────────
   {
-    title: "DS3 Datathon - Machine Learning Solutions",
-    type:  "DATA SCIENCE · ML",
+    title: "Minecraft Block Viewer 3D GUI",
+    type:  "DESKTOP • JAVA",
     description:
-      "Competed in the DS3 Datathon 2025, placing 9th out of 180 participants. Solved three real-world problems: car safety evaluation (95% accuracy), car accident analysis (93% accuracy), and fungi classification. This was our first hands-on experience in Machine Learning and Data Science, tackling real-world issues like outliers and incomplete data.",
-    image: ds3Img,
-    isHackathon: true,
-    placement: "9th",
+      "A Java‑based tool that loads 100+ Minecraft blocks into a rotatable, sortable 3‑D interface—perfect for learning block properties and recipes. You can filter through hundreds of blocks by property and the UI and mousehandling is all done from scratch to give it a Minecraft like feel.",
+    image: minecraftImage,
+    isHackathon: false,
+    placement: null,
     links: {
-      github: "https://github.com/XDAathi/DS3-Datathon"
+      github: "https://github.com/jacobamobin/MinecraftBlockGUI"
     },
     technologies: [
-      { name: "Python",       color: "#3776AB" },
-      { name: "Jupyter",      color: "#F37626" },
-      { name: "Data Science", color: "#38B2AC" },
-      { name: "Machine Learning", color: "#FF6B6B" },
-      { name: "Pandas",       color: "#130654" },
-      { name: "NumPy",        color: "#4DABCF" }
+      { name: "Java",    color: "#007396" },
+      { name: "Java 3D", color: "#A179DC" },
+      { name: "Swing",   color: "#6E6E6E" }
     ]
   },
 
   // 7 ───────────────────────────────────────────────────────
+  {
+    title: "Assignment Tracker",
+    type:  "iOS • iPadOS • watchOS APP",
+    description:
+      "A SwiftUI + SwiftData planner that organises homework by due date, syncs to widgets, and notifies you of looming deadlines across all Apple devices.",
+    image: assignmentImage,
+    isHackathon: false,
+    placement: null,
+    links: {
+      github: "https://github.com/jacobamobin/AssightmentTrackerApp"
+    },
+    technologies: [
+      { name: "SwiftUI",   color: "#007AFF" },
+      { name: "SwiftData", color: "#FF9500" },
+      { name: "WidgetKit", color: "#5AC8FA" }
+    ]
+  },
+
+  // 8 ───────────────────────────────────────────────────────
   {
     title: "Bin Buddy",
     type:  "WEB APPLICATION · SUSTAINABILITY",
@@ -192,41 +209,50 @@ export const projects = [
     ]
   },
 
-  // 8 ───────────────────────────────────────────────────────
+  // 9 ───────────────────────────────────────────────────────
   {
-    title: "Minecraft Block Viewer 3D GUI",
-    type:  "DESKTOP • JAVA",
+    title: "CliniMatch",
+    type:  "WEB APPLICATION · HEALTHCARE AI",
     description:
-      "A Java‑based tool that loads 100+ Minecraft blocks into a rotatable, sortable 3‑D interface—perfect for learning block properties and recipes. You can filter through hundreds of blocks by property and the UI and mousehandling is all done from scratch to give it a Minecraft like feel.",
-    image: minecraftImage,
-    isHackathon: false,
+      "An AI-powered clinical trial matching platform built for TerraHacks 2025. CliniMatch uses Google Gemini AI to translate complex medical jargon into simple, patient-friendly language, helping users find relevant clinical trials based on their health profile. Features interactive maps, secure user authentication, and intelligent trial recommendations.",
+    image: cliniMatchImg,
+    isHackathon: true,
     placement: null,
     links: {
-      github: "https://github.com/jacobamobin/MinecraftBlockGUI"
+      github: "https://github.com/jacobamobin/CliniMatch",
+      devpost: "https://devpost.com/software/clinimatch"
     },
     technologies: [
-      { name: "Java",    color: "#007396" },
-      { name: "Java 3D", color: "#A179DC" },
-      { name: "Swing",   color: "#6E6E6E" }
+      { name: "React",        color: "#61DAFB" },
+      { name: "TypeScript",   color: "#3178C6" },
+      { name: "Python",       color: "#3776AB" },
+      { name: "Flask",        color: "#000000" },
+      { name: "Google Gemini", color: "#4285F4" },
+      { name: "Supabase",     color: "#3ECF8E" },
+      { name: "TailwindCSS",  color: "#38B2AC" },
+      { name: "Framer Motion", color: "#0055FF" }
     ]
   },
 
-  // 9 ───────────────────────────────────────────────────────
+  // 10 ───────────────────────────────────────────────────────
   {
-    title: "Assignment Tracker",
-    type:  "iOS • iPadOS • watchOS APP",
+    title: "DS3 Datathon - Machine Learning Solutions",
+    type:  "DATA SCIENCE · ML",
     description:
-      "A SwiftUI + SwiftData planner that organises homework by due date, syncs to widgets, and notifies you of looming deadlines across all Apple devices.",
-    image: assignmentImage,
-    isHackathon: false,
-    placement: null,
+      "Competed in the DS3 Datathon 2025, placing 9th out of 180 participants. Solved three real-world problems: car safety evaluation (95% accuracy), car accident analysis (93% accuracy), and fungi classification. This was our first hands-on experience in Machine Learning and Data Science, tackling real-world issues like outliers and incomplete data.",
+    image: ds3Img,
+    isHackathon: true,
+    placement: "9th",
     links: {
-      github: "https://github.com/jacobamobin/AssightmentTrackerApp"
+      github: "https://github.com/XDAathi/DS3-Datathon"
     },
     technologies: [
-      { name: "SwiftUI",   color: "#007AFF" },
-      { name: "SwiftData", color: "#FF9500" },
-      { name: "WidgetKit", color: "#5AC8FA" }
+      { name: "Python",       color: "#3776AB" },
+      { name: "Jupyter",      color: "#F37626" },
+      { name: "Data Science", color: "#38B2AC" },
+      { name: "Machine Learning", color: "#FF6B6B" },
+      { name: "Pandas",       color: "#130654" },
+      { name: "NumPy",        color: "#4DABCF" }
     ]
   }
 ];
