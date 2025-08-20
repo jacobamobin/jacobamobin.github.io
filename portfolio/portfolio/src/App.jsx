@@ -5,6 +5,7 @@ import Header from "./components/layout/Header";
 
 // Section Components
 import About from "./components/sections/About";
+import Experience from "./components/sections/Experience";
 import Skills from "./components/sections/Skills";
 import Projects from "./components/sections/Projects";
 import Hackathons from "./components/sections/Hackathons";
@@ -24,6 +25,7 @@ function App() {
       </div>
       
       <div className="max-w-7xl mx-auto pb-12 px-4 sm:px-6 pt-6">
+        <Experience />
         <Skills />
         <Projects />
         <Hackathons />
