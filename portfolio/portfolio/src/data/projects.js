@@ -134,7 +134,7 @@ export const projects = [
       "An accessibility‑focused iOS app that empowers users, especially those with disabilities, to create custom 3D‑printable assistive devices. By providing text descriptions and optional images, users can generate and refine 3D models through an intuitive chat‑based interface. Built during the GenAI Genesis Hackathon 2025.",
     image: abilityImage,
     isHackathon: true,
-    placement: "1st",
+    placement: null,
     links: {
       github: "https://github.com/jacobamobin/Ability",
       devpost: "https://devpost.com/software/ability"
@@ -194,7 +194,7 @@ export const projects = [
       "A smart, eco-friendly waste management companion built at SolutionHacks. Bin Buddy instantly analyzes, categorizes, and tracks waste with photo uploads, provides environmental impact insights, and discovers nearby drop-off locations for e-waste, furniture, chemicals, etc. Features gamified achievements to make sustainability fun.",
     image: binBuddyImg,
     isHackathon: true,
-    placement: "Winner - Best Projects that Aim to Solve a Sustainable Development Goal",
+    placement: "1st Overall",
     links: {
       github: "https://github.com/XDAathi/Bin-Buddy",
       devpost: "https://devpost.com/software/bin-buddy-ld8uak"
