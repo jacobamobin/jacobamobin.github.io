@@ -29,16 +29,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="space-y-8"
         >
-          {/* Greeting */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center px-6 py-3 rounded-full bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border border-white/20 dark:border-gray-700/20"
-          >
-            <FaHandPaper className="text-2xl mr-3 text-yellow-500" />
-            <span className="text-gray-700 dark:text-gray-300 font-medium">Hello, I'm</span>
-          </motion.div>
+          
 
           {/* Name */}
           <motion.h1
@@ -88,7 +79,7 @@ const Hero = () => {
               onClick={scrollToAbout}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
+              className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
             >
               Explore My Work
               <HiArrowDown className="ml-2 w-5 h-5 animate-bounce" />

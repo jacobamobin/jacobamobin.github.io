@@ -1,11 +1,13 @@
 export const experience = [
   {
     company: "Callings.AI",
+    companyUrl: "https://callings.ai",
     position: "Software Developer",
     type: "Part-time, Remote",
     location: "San Mateo, CA",
     startDate: "Jun. 2025",
     endDate: "Present",
+    showDescription: true,
     description: [
       "Normalized 7M+ job records from multiple vendors into a unified format for natural language search.",
       "Re-engineered LLM enrichment pipelines handling 220K jobs/day, cutting costs by 433%.",
@@ -25,11 +27,13 @@ export const experience = [
   },
   {
     company: "Resumate (StreamlineX)",
+    companyUrl: "https://resumate.ca",
     position: "Software Engineer",
     type: "Part-time",
     location: "Toronto, ON",
     startDate: "Feb. 2025",
     endDate: "Present",
+    showDescription: false,
     description: [
       "Developed a Chrome extension that uses an LLM to generate job-specific resume rewrites in one click.",
       "Built a Node.js/Firebase backend that parses resumes and streams LaTeX-styled, Base64-encoded PDFs.",

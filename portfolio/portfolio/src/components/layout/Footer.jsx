@@ -1,28 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HiHeart, HiCode, HiArrowUp } from 'react-icons/hi';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    {
-      icon: FaGithub,
-      href: 'https://github.com/jacobamobin',
-      label: 'GitHub'
-    },
-    {
-      icon: FaLinkedin,
-      href: 'https://linkedin.com/in/jacobmobin',
-      label: 'LinkedIn'
-    },
-    {
-      icon: FaTwitter,
-      href: 'https://twitter.com/jacobmobin',
-      label: 'Twitter'
-    }
-  ];
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -39,50 +21,6 @@ const Footer = () => {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-8">
-          {/* Main Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-              Thanks for visiting!
-            </h3>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              This portfolio was crafted with passion using React, Tailwind CSS, and Framer Motion. 
-              Always open to feedback and new opportunities.
-            </p>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            viewport={{ once: true }}
-            className="flex justify-center space-x-6"
-          >
-            {socialLinks.map((social, index) => {
-              const IconComponent = social.icon;
-              return (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-4 rounded-full bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:shadow-lg"
-                  aria-label={social.label}
-                >
-                  <IconComponent className="w-6 h-6" />
-                </motion.a>
-              );
-            })}
-          </motion.div>
-
           {/* Divider */}
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}

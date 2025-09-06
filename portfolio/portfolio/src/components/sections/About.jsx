@@ -87,13 +87,13 @@ const About = () => {
                   </p>
                   
                   {/* Location */}
-                  <div className="flex items-center justify-center space-x-2 text-gray-500 dark:text-gray-400">
+                  <div className="flex items-center justify-center space-x-3 text-gray-500 dark:text-gray-400">
                     <HiLocationMarker className="w-4 h-4" />
-                    <span>Toronto, Ontario 🇨🇦</span>
+                    <span>Toronto, Canada  🇨🇦</span>
                   </div>
 
                   {/* Social Links */}
-                  <div className="flex justify-center space-x-6 pt-4">
+                  <div className="flex justify-center space-x-2 pt-4">
                     {socialLinks.map((link) => {
                       const IconComponent = link.icon;
                       return (
@@ -117,9 +117,9 @@ const About = () => {
                     href="/assets/Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.05, y: -1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center px-6 py-3 mt-6 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="inline-flex items-center px-8 py-4 mt-6 text-sm font-semibold text-gray-900 dark:text-white bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border border-white/30 dark:border-gray-700/30 rounded-full shadow-lg hover:shadow-xl hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300"
                   >
                     <HiDownload className="w-4 h-4 mr-2" />
                     Resume
@@ -132,25 +132,19 @@ const About = () => {
           {/* About Content */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4"
-              >
-                Hi, I'm Jacob
-              </motion.div>
-              
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                 Computer Science Student at{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                  Toronto Metropolitan University
+                <span className="text-yellow-500 dark:text-yellow-400">
+                  Toronto Metropolitan 
+                </span>
+                <span className="text-blue-600 dark:text-blue-400">
+                  {' '}University
                 </span>
               </h2>
             </div>
 
             <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              <p>
+              {/*<p>
                 I'm passionate about building{' '}
                 <span className="text-blue-600 dark:text-blue-400 font-semibold">
                   full-stack applications
@@ -164,7 +158,7 @@ const About = () => {
                   mobile apps
                 </span>
                 .
-              </p>
+              </p>*/}
 
               <p>
                 Beyond coding, I'm a{' '}

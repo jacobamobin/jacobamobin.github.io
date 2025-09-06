@@ -134,11 +134,8 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4">
-            Technical Skills
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+            <span className="text-blue-600 dark:text-blue-400">
               Skills
             </span>
           </h2>
@@ -154,24 +151,6 @@ const Skills = () => {
           <SkillSection title="Developer Tools" skills={skillsData.tools} />
         </div>
 
-        {/* Skills Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-white/5 dark:bg-gray-800/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 dark:border-gray-700/10">
-            <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              Always Learning
-            </h4>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Continuously exploring new technologies and staying current with the latest developments 
-              in software engineering and development.
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

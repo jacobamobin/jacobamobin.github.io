@@ -84,26 +84,26 @@ export const projects = [
   },
 
   // 3 ───────────────────────────────────────────────────────
-  {
-    title: "RapidResume",
-    type:  "WEB APPLICATION",
-    description:
-      "Private project.",
-    image: rapidResumeImage,
-    userCount: "Work In Progress",
-    isHackathon: false,
-    placement: null,
-    links: {
-      web: "https://yourusername.github.io/rapidresume"
-    },
-    technologies: [
-      { name: "ReactJS",       color: "#61DAFB" },
-      { name: "Node.js",       color: "#339933" },
-      { name: "Firebase",      color: "#FFCA28" },
-      { name: "TailwindCSS",   color: "#38B2AC" },
-      { name: "Stripe",        color: "#635BFF" }
-    ]
-  },
+  //{
+   // title: "RapidResume",
+    //type:  "WEB APPLICATION",
+    //description:
+    //  "Private project.",
+    //image: rapidResumeImage,
+    //userCount: "Work In Progress",
+    //isHackathon: false,
+    //placement: null,
+    //links: {
+    //  web: "https://yourusername.github.io/rapidresume"
+    //},
+    //technologies: [
+    //  { name: "ReactJS",       color: "#61DAFB" },
+     // { name: "Node.js",       color: "#339933" },
+      //{ name: "Firebase",      color: "#FFCA28" },
+      //{ name: "TailwindCSS",   color: "#38B2AC" },
+      //{ name: "Stripe",        color: "#635BFF" }
+   // ]
+  //},
 
   // 4 ───────────────────────────────────────────────────────
   {

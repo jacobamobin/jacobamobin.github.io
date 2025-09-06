@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaTrophy, FaGithub, FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt } from 'react-icons/fa';
+import { SiDevpost } from 'react-icons/si';
 import { hackathons } from '../../data/hackathons';
 
 const Hackathons = () => {
@@ -54,7 +55,7 @@ const Hackathons = () => {
             </div>
           )}
 
-          {/* Date and Location Overlay */}
+          {/* Date and Location overlay */}
           <div className="absolute bottom-4 left-4 space-y-1">
             <div className="flex items-center space-x-2 text-white text-sm">
               <FaCalendarAlt className="w-4 h-4" />
@@ -69,61 +70,79 @@ const Hackathons = () => {
 
         {/* Content */}
         <div className="p-6">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300 mb-3">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
             {hackathon.title}
           </h3>
 
-          {/* Description */}
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 line-clamp-3">
+          <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6 line-clamp-3">
             {hackathon.description}
           </p>
 
           {/* Technologies */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {hackathon.technologies.map((tech) => (
-              <span
-                key={tech.name}
-                className="px-3 py-1 text-xs font-medium rounded-full border"
-                style={{ 
-                  backgroundColor: `${tech.color}20`,
-                  color: tech.color,
-                  borderColor: `${tech.color}30`
-                }}
-              >
-                {tech.name}
-              </span>
-            ))}
-          </div>
+          {hackathon.technologies && (
+            <div className="mb-6">
+              <div className="flex flex-wrap gap-2">
+                {hackathon.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/10 dark:bg-gray-800/10 border border-white/20 dark:border-gray-700/20"
+                    style={{ 
+                      backgroundColor: `${tech.color}20`,
+                      color: tech.color,
+                      borderColor: `${tech.color}30`
+                    }}
+                  >
+                    {tech.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Links */}
-          <div className="flex items-center space-x-3">
-            {hackathon.links?.github && (
-              <motion.a
-                href={hackathon.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-2 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors text-sm font-medium"
-              >
-                <FaGithub className="w-4 h-4" />
-                <span>Code</span>
-              </motion.a>
-            )}
-            {hackathon.links?.devpost && (
-              <motion.a
-                href={hackathon.links.devpost}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
-              >
-                <FaExternalLinkAlt className="w-4 h-4" />
-                <span>Devpost</span>
-              </motion.a>
-            )}
-          </div>
+          {hackathon.links && (
+            <div className="flex items-center space-x-3">
+              {hackathon.links.github && (
+                <motion.a
+                  href={hackathon.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gray-900 dark:bg-gray-700 text-white hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors text-sm font-medium"
+                >
+                  <FaGithub className="w-4 h-4" />
+                  <span>Code</span>
+                </motion.a>
+              )}
+              {hackathon.links.devpost && (
+                <motion.a
+                  href={hackathon.links.devpost}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors text-sm font-medium"
+                >
+                  <SiDevpost className="w-4 h-4" />
+                  <span>Devpost</span>
+                </motion.a>
+              )}
+              {hackathon.links.demo && (
+                <motion.a
+                  href={hackathon.links.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors text-sm font-medium"
+                >
+                  <FaExternalLinkAlt className="w-4 h-4" />
+                  <span>Demo</span>
+                </motion.a>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </motion.div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HiMail, HiLocationMarker } from 'react-icons/hi';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
   const contactInfo = [
@@ -38,6 +38,11 @@ const Contact = () => {
       icon: FaLinkedin,
       href: 'https://linkedin.com/in/jacobamobin',
       color: 'hover:text-blue-600'
+    },
+    {
+      icon: FaTwitter,
+      href: 'https://twitter.com/jacobamobin',
+      color: 'hover:text-blue-400'
     }
   ];
 
@@ -99,37 +104,10 @@ const Contact = () => {
           className="max-w-2xl mx-auto"
         >
           <div className="space-y-8">
-            {/* Main Title */}
-            <motion.div variants={itemVariants} className="text-center">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <motion.div variants={itemVariants}>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
                 Contact Information
               </h3>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div variants={itemVariants} className="text-center">
-              <div className="flex justify-center space-x-6 mb-8">
-                {socialLinks.map((social, index) => {
-                  const IconComponent = social.icon;
-                  return (
-                    <motion.a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.2, y: -2 }}
-                      whileTap={{ scale: 0.9 }}
-                      className={`p-4 rounded-full bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:shadow-lg`}
-                    >
-                      <IconComponent className="w-6 h-6" />
-                    </motion.a>
-                  );
-                })}
-              </div>
-            </motion.div>
-
-            {/* Contact Cards */}
-            <motion.div variants={itemVariants}>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
@@ -166,17 +144,42 @@ const Contact = () => {
               </div>
             </motion.div>
 
+            {/* Social Links */}
+            <motion.div variants={itemVariants} className="text-center">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                Follow Me
+              </h4>
+              <div className="flex justify-center space-x-6">
+                {socialLinks.map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <motion.a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, y: -2 }}
+                      whileTap={{ scale: 0.9 }}
+                      className={`p-4 rounded-full bg-white/10 dark:bg-gray-800/10 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 hover:shadow-lg`}
+                    >
+                      <IconComponent className="w-6 h-6" />
+                    </motion.a>
+                  );
+                })}
+              </div>
+            </motion.div>
+
             {/* Available for Work */}
             <motion.div 
               variants={itemVariants}
-              className="p-6 rounded-xl bg-green-500/10 dark:bg-green-500/5 border border-green-500/20 text-center"
+              className="p-6 rounded-xl bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 text-center"
             >
               <div className="flex items-center justify-center space-x-3 mb-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-green-600 dark:text-green-400 font-semibold">Available for Internships</span>
+                <span className="text-green-600 dark:text-green-400 font-semibold">Available for Work</span>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Currently seeking Software Engineering/Developer internships for Summer 2026. 
+                Currently seeking full-time software development opportunities. 
                 Open to remote work and relocation.
               </p>
             </motion.div>
